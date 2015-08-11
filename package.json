@@ -1,0 +1,15 @@
+{
+  "name": "browserify-bundling-tests",
+  "version": "1.0.0",
+  "scripts": {
+    "md": "mkdir -p build",
+    "bundle_one": "npm run md && ./node_modules/.bin/browserify -r ./src/bundle-1:bundle.one > build/bundle.one.js",
+    "bundle_two": "npm run md && ./node_modules/.bin/browserify -r ./src/bundle-2:bundle.two -x ./build/bundle.one.js > build/bundle.two.js",
+    "failure": "npm run bundle_one && npm run bundle_two"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "^11.0.1"
+  }
+}
